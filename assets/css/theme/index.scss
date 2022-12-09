@@ -1,0 +1,11 @@
+@use 'dark' as dark;
+@use 'light' as light;
+
+$themes: (
+  'dark': (
+    'colors': dark.$theme-colors,
+  ),
+  'light': (
+    'colors': light.$theme-colors,
+  ),
+);

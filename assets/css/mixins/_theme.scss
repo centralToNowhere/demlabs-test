@@ -1,0 +1,27 @@
+@use 'assets/css/theme/index' as *;
+@use 'assets/css/functions/index' as fn;
+
+@mixin _themify-color-prop($property, $values...) {
+  $valuesLength: length($values);
+  $colorName: nth($values, $valuesLength);
+  $newValues: ();
+
+  @for $i from 1 through $valuesLength {
+    @if ($i != $valuesLength) {
+      $newValues: append($newValues, nth($values, $i), 'space');
+    }
+  }
+
+  @each $theme, $theme-props in $themes {
+    $theme-colors: map-get($theme-props, 'colors');
+
+    .theme-#{$theme} & {
+      #{$property}: if(length($newValues) >= 1, #{$newValues}, null)
+        map-get($theme-colors, $colorName);
+    }
+  }
+}
+
+@mixin prop($prop, $arguments...) {
+  @include _themify-color-prop($prop, $arguments...);
+}
