@@ -1,5 +1,5 @@
 <template lang="pug">
-  BaseContent
+  NuxtChild
 </template>
 
 <script>

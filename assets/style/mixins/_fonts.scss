@@ -1,0 +1,10 @@
+@use '../variables' as vars;
+@use '../functions' as fn;
+
+@mixin font($size, $weight: fasle) {
+  font-size: fn.pxToRem($size);
+
+  @if $weight {
+    font-weight: map-get(vars.$font-weights, $weight);
+  }
+}

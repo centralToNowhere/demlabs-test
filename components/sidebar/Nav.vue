@@ -63,10 +63,10 @@
       const iconPath = icon ? `/icons/${icon}.svg` : ""
       const routeTo = path ? `/${path}` : ""
 
-    li.sidebar-nav__item
+    NuxtLink.sidebar-nav__item(to=routeTo tag="li")
       if iconPath
         NuxtImg(src=iconPath)
-      NuxtLink.sidebar-nav__link(to=routeTo) #{name}
+      span= name
 
   nav.sidebar-nav
     ul.sidebar-nav__list
@@ -84,13 +84,17 @@
 
   &__item {
     display: flex;
+    height: fn.pxToRem(52);
     align-items: center;
     gap: fn.pxToRem(16);
-    padding: fn.pxToRem(14) 0 fn.pxToRem(14) fn.pxToRem(24);
+    padding-left: fn.pxToRem(24);
     font-size: fn.pxToRem(13);
     cursor: pointer;
+    @include mx.themify() using($p) {
+      color: fn.color('primary', $p);
+    }
 
-    &_active {
+    &.nuxt-link-exact-active {
       border-bottom-right-radius: fn.pxToRem(16);
       border-top-right-radius: fn.pxToRem(16);
 
