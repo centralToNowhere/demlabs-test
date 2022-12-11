@@ -1,0 +1,35 @@
+@use 'mixins' as mx;
+@use 'variables' as vars;
+@use 'functions' as fn;
+@use 'fonts';
+
+body {
+  margin: 0;
+  font-family: vars.$quicksand;
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased !important;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  @include mx.themify() using ($p) {
+    color: fn.color('text', $p);
+  }
+}
+
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+}

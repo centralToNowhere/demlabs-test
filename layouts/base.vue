@@ -9,6 +9,9 @@
 </template>
 
 <style lang="scss">
+@use '~style/mixins' as mx;
+@use '~style/functions' as fn;
+
 html,
 body,
 #__nuxt,
@@ -21,7 +24,9 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  @include mx.prop('background-color', 'surface');
+  @include mx.themify() using ($p) {
+    background-color: fn.color('surface', $p);
+  }
 }
 
 .base-layout__row {

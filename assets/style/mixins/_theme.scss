@@ -1,0 +1,9 @@
+@use '../theme' as th;
+
+@mixin themify() {
+  @each $theme, $theme-props in th.$themes {
+    .theme-#{$theme} & {
+      @content ($theme-props);
+    }
+  }
+}

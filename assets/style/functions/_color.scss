@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use '../theme' as *;
+
+@function color($color, $theme-props) {
+  $theme-colors: map-get($theme-props, 'colors');
+
+  @return map-get($theme-colors, $color);
+}

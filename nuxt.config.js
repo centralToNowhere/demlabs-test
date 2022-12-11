@@ -1,9 +1,15 @@
+import { resolve } from 'path'
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+
+  alias: {
+    style: resolve(__dirname, './assets/style'),
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -24,7 +30,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~assets/style/global.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -39,16 +45,20 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxtjs/style-resources',
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/style-resources'],
+  modules: [],
 
-  styleResources: {
-    scss: ['~assets/css/core.scss'],
-    hoistUseStatements: true,
+  image: {
+    dir: 'assets/images',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    loaders: {
+      scss: { sourceMap: false },
+    },
+  },
 }
