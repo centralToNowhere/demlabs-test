@@ -24,6 +24,7 @@
     flex-direction: column;
     flex: 1;
     border-radius: fn.pxToRem(12);
+    transition: background-color 0.5s linear 0s;
 
     @include mx.themify() using ($p) {
       background-color: fn.color('surface2', $p);
@@ -46,8 +47,12 @@
       padding: fn.pxToRem(8) fn.pxToRem(16) fn.pxToRem(7);
       @include mx.font(12, 'medium');
       @include mx.themify() using ($p) {
-        background-color: fn.color('surface', $p);
+        background-color: fn.color('surface9', $p);
         color: fn.color('primary', $p);
+      }
+
+      @include mx.themify('light') using ($p) {
+        color: fn.color('surface', $p);
       }
     }
 

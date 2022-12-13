@@ -75,6 +75,10 @@ export default defineComponent({
       inset 1px 1px 4px fn.color('shadow9', $p);
   }
 
+  @include mx.themify('light') using ($p) {
+    color: fn.color('surface', $p);
+  }
+
   &_large {
     padding: fn.pxToRem(6) 0;
     border-radius: fn.pxToRem(30);

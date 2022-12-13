@@ -24,6 +24,8 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+  transition: background-color 0.5s linear 0s;
+
   @include mx.themify() using ($p) {
     background-color: fn.color('surface', $p);
   }

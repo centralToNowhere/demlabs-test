@@ -90,9 +90,6 @@
     padding-left: fn.pxToRem(24);
     font-size: fn.pxToRem(13);
     cursor: pointer;
-    @include mx.themify() using($p) {
-      color: fn.color('primary', $p);
-    }
 
     &.nuxt-link-exact-active {
       border-bottom-right-radius: fn.pxToRem(16);

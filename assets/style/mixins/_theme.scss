@@ -1,8 +1,16 @@
 @use '../theme' as th;
 
-@mixin themify() {
-  @each $theme, $theme-props in th.$themes {
-    .theme-#{$theme} & {
+@mixin themify($themeName: '') {
+  @if $themeName == '' {
+    @each $theme, $theme-props in th.$themes {
+      .theme-#{$theme} & {
+        @content ($theme-props);
+      }
+    }
+  } @else {
+    $theme-props: map-get(th.$themes, $themeName);
+
+    .theme-#{$themeName} & {
       @content ($theme-props);
     }
   }
