@@ -49,6 +49,9 @@ jobs:
       - name: Run tests 🧪
         run: yarn test
 
+      - name: Generate dist
+        run: yarn generate
+
       - name: Deploy 🚀
         id: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
