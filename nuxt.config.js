@@ -7,10 +7,6 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  router: {
-    base: '/demlabs-test/',
-  },
-
   alias: {
     style: resolve(__dirname, './assets/style'),
   },
