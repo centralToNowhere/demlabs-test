@@ -1,6 +1,5 @@
 <template lang="pug">
-  -
-    const sectionName = "Wallet";
+  - const sectionName = "Wallet";
 
   SectionLayout
     template(v-slot:content-header)
@@ -9,7 +8,7 @@
 
 <script>
 import Vue from 'vue'
-import SectionLayout from '~/layouts/section'
+import SectionLayout from '@/layouts/section.vue'
 
 export default Vue.extend({
   name: 'Wallet',

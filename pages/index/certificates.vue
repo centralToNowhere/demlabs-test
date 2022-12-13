@@ -79,10 +79,10 @@
 
 <script>
 import Vue from 'vue'
-import SectionLayout from '~/layouts/section'
-import Settings from '~/components/settings'
-import Radio from '~/components/radio'
-import ButtonComponent from '~/components/button'
+import SectionLayout from '@/layouts/section.vue'
+import Settings from '@/components/settings/index.vue'
+import Radio from '@/components/radio/index.vue'
+import ButtonComponent from '@/components/button/index.vue'
 
 export default Vue.extend({
   name: 'Certificates',
