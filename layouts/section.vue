@@ -73,8 +73,9 @@
 
   &__controls {
     display: flex;
+    flex-direction: column;
     width: fn.pxToRem(398);
-    padding: 0 fn.pxToRem(40);
+    padding: fn.pxToRem(12) fn.pxToRem(40) 0 fn.pxToRem(40);
   }
 }
 </style>
