@@ -1,6 +1,19 @@
 <template lang="pug">
   header
+    SearchComponent
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import SearchComponent from '@/components/search/index.vue'
+
+export default defineComponent({
+  name: 'HeaderComponent',
+  components: {
+    SearchComponent,
+  },
+})
+</script>
 
 <style lang="scss">
 @use '~style/functions' as fn;
@@ -11,6 +24,7 @@ header {
   height: fn.pxToRem(60);
   margin-left: fn.pxToRem(3);
   border-bottom-left-radius: fn.pxToRem(15);
+  padding: fn.pxToRem(14) 0 fn.pxToRem(15) fn.pxToRem(36);
 
   @include mx.themify() using ($p) {
     background-color: fn.color('surface', $p);

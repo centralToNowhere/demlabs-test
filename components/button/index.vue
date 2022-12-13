@@ -1,30 +1,48 @@
 <template lang="pug">
   button.button(:disabled="buttonDisabled" v-bind:class="classObject") {{ buttonTitle }}
+    if buttonType
+      slot(name="button-icon")
 </template>
 
-<script>
-import Vue from 'vue'
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
 
-export default Vue.extend({
-  name: 'DefaultButton',
+interface ButtonProps {
+  buttonTitle?: string
+  buttonSize?: 'small' | 'large'
+  buttonDisabled?: boolean
+  buttonType?: 'default' | 'icon'
+}
+
+type ButtonClasses = {
+  [key: string]: boolean
+}
+
+export default defineComponent({
+  name: 'ButtonComponent',
   props: {
     buttonTitle: {
-      type: String,
+      type: String as PropType<ButtonProps['buttonTitle']>,
       default: '',
     },
     buttonSize: {
-      type: String,
+      type: String as PropType<ButtonProps['buttonSize']>,
       default: 'small',
     },
     buttonDisabled: {
-      type: Boolean,
+      type: Boolean as PropType<ButtonProps['buttonDisabled']>,
       default: false,
+    },
+    buttonType: {
+      type: String as PropType<ButtonProps['buttonType']>,
+      default: 'default',
     },
   },
   computed: {
-    classObject: function () {
+    classObject: function (): ButtonClasses {
       return {
         button_large: this.buttonSize === 'large',
+        button_icon: this.buttonType === 'icon',
       }
     },
   },
@@ -40,7 +58,6 @@ export default Vue.extend({
   display: flex;
   align-items: center;
   justify-content: center;
-  height: fn.pxToRem(24);
   line-height: fn.pxToRem(18);
   border-radius: fn.pxToRem(24);
   width: 100%;
@@ -59,10 +76,14 @@ export default Vue.extend({
   }
 
   &_large {
-    height: fn.pxToRem(36);
+    padding: fn.pxToRem(6) 0;
     border-radius: fn.pxToRem(30);
     line-height: fn.pxToRem(24);
     @include mx.font(14, 'medium');
+  }
+
+  &_icon {
+    background: transparent;
   }
 
   &:hover {

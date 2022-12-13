@@ -17,5 +17,6 @@
     },
     "types": ["@nuxt/types", "@nuxt/image", "@types/node"]
   },
+  "include": ["**/*", "**/*.vue", "**/*.d.ts"],
   "exclude": ["node_modules", ".nuxt", "dist"]
 }
