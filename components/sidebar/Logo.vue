@@ -1,6 +1,6 @@
 <template lang="pug">
   .logo
-    NuxtImg(src="/Logo.svg")
+    NuxtImg(src="/images/Logo.svg")
 </template>
 
 <style lang="scss">

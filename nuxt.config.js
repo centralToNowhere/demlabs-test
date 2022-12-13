@@ -54,10 +54,6 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
-  image: {
-    dir: 'assets/images',
-  },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     loaders: {

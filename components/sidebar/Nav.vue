@@ -60,7 +60,7 @@
 
   mixin navItem(name="", icon="", path="")
     -
-      const iconPath = icon ? `/icons/${icon}.svg` : ""
+      const iconPath = icon ? `/images/icons/${icon}.svg` : ""
       const routeTo = path ? `/${path}` : ""
 
     NuxtLink.sidebar-nav__item(to=routeTo tag="li")
