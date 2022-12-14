@@ -29,6 +29,7 @@ export default defineComponent({
   margin-left: fn.pxToRem(3);
   border-bottom-left-radius: fn.pxToRem(15);
   padding: fn.pxToRem(14) fn.pxToRem(36) fn.pxToRem(15) fn.pxToRem(36);
+  transition: background-color 0.5s linear 0s;
 
   @include mx.themify() using ($p) {
     background-color: fn.color('surface', $p);

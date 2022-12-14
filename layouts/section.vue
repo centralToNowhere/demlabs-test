@@ -45,6 +45,8 @@
     &-title {
       line-height: fn.pxToRem(15);
       padding: fn.pxToRem(8) fn.pxToRem(16) fn.pxToRem(7);
+      transition: background-color 0.5s linear 0s;
+
       @include mx.font(12, 'medium');
       @include mx.themify() using ($p) {
         background-color: fn.color('surface9', $p);
