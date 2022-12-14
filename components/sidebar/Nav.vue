@@ -65,7 +65,7 @@
 
     NuxtLink.sidebar-nav__item(to=routeTo tag="li")
       if iconPath
-        NuxtImg(src=iconPath)
+        img(src=iconPath alt="")
       span= name
 
   nav.sidebar-nav

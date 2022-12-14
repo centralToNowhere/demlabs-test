@@ -1,6 +1,6 @@
 <template lang="pug">
   .logo
-    NuxtImg(src="/images/Logo.svg")
+    img(src="/images/Logo.svg" alt="demlabs-logo")
 </template>
 
 <style lang="scss">
