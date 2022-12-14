@@ -1,6 +1,6 @@
 <template lang="pug">
   .logo
-    img(src="/images/Logo.svg" alt="demlabs-logo")
+    img(src="images/Logo.svg" alt="demlabs-logo")
 </template>
 
 <style lang="scss">
