@@ -43,7 +43,7 @@
   height: fn.pxToRem(42);
   margin-top: fn.pxToRem(5);
   padding: 0 fn.pxToRem(50);
-  transition: background-color 0.5s linear 0s;
+  transition: background-color 0.5s linear 0s, border 0.5s linear 0s;
 
   @include mx.themify() using ($p) {
     background-color: fn.color('surface', $p);
